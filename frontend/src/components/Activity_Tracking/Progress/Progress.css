@@ -131,7 +131,7 @@
   font-weight: 800;
 }
 
-.summary-info {}
+/*.summary-info {}*/
 .summary-name  { font-size: 14px; font-weight: 600; margin-bottom: 3px; }
 .summary-count { font-size: 12px; color: var(--muted); }
 .summary-trend {
