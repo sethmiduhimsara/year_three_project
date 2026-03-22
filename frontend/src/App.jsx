@@ -1,21 +1,30 @@
-import { useState } from 'react'
+import React, { useState } from 'react'
 import Sidebar from './components/Sidebar/Sidebar'
-// import reactLogo from './assets/react.svg'
-// import viteLogo from './assets/vite.svg'
-// import heroImg from './assets/hero.png'
-// import './App.css'
+import Dashboard from './components/Activity_Tracking/Dashboard/Dashboard'
+import './App.css'
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [activePage, setActivePage] = useState('dashboard')
+
+  const renderPage = () => {
+    switch (activePage) {
+      case 'dashboard': return <Dashboard />
+      // later you'll add:
+      // case 'progress':  return <Progress />
+      // case 'activity':  return <History />
+      // case 'badges':    return <Badges />
+      default: return <Dashboard />
+    }
+  }
 
   return (
     <>
       <Sidebar
-        activeItem="dashboard"
-        onNavChange={(id) => console.log('Navigated to:', id)}
+        activeItem={activePage}
+        onNavChange={(id) => setActivePage(id)}
         user={{ initials: 'AS', name: 'Asel Silva', role: '2nd Year · CS' }}
       />
-      
+      {renderPage()}
     </>
   )
 }
