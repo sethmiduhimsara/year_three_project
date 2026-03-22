@@ -3,6 +3,7 @@ import Sidebar from './components/Sidebar/Sidebar'
 import Dashboard from './components/Activity_Tracking/Dashboard/Dashboard'
 import Progress from './components/Activity_Tracking/Progress/Progress'
 import History from './components/Activity_Tracking/Activity_history/History'
+import Badges from './components/Activity_Tracking/Badges/Badges'
 // import './App.css'
 
 function App() {
@@ -12,7 +13,8 @@ function App() {
     switch (activePage) {
       case 'dashboard': return <Dashboard />
       case 'progress':  return <Progress />
-     case 'activity': return <History />
+      case 'activity': return <History />
+      case 'badges':    return <Badges />
       // case 'badges':    return <Badges />
       default: return <Dashboard />
     }
