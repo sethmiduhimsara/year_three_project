@@ -1,7 +1,9 @@
 import React, { useState } from 'react'
 import Sidebar from './components/Sidebar/Sidebar'
 import Dashboard from './components/Activity_Tracking/Dashboard/Dashboard'
-import './App.css'
+import Progress from './components/Activity_Tracking/Progress/Progress'
+import History from './components/Activity_Tracking/Activity_history/History'
+// import './App.css'
 
 function App() {
   const [activePage, setActivePage] = useState('dashboard')
@@ -9,9 +11,8 @@ function App() {
   const renderPage = () => {
     switch (activePage) {
       case 'dashboard': return <Dashboard />
-      // later you'll add:
-      // case 'progress':  return <Progress />
-      // case 'activity':  return <History />
+      case 'progress':  return <Progress />
+     case 'activity': return <History />
       // case 'badges':    return <Badges />
       default: return <Dashboard />
     }
